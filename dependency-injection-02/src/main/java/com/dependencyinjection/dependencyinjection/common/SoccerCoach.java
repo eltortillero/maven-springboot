@@ -1,11 +1,11 @@
 package com.dependencyinjection.dependencyinjection.common;
 
-//import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class SoccerCoach implements Coach {
     @Override
     public String getDailyWorkout() {
-        return "Run 10 time around the field";
+        return "Run 10 times around the field";
     }
 }
