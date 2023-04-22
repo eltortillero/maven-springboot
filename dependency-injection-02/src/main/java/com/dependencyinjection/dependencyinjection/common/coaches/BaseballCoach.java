@@ -1,4 +1,6 @@
-package com.dependencyinjection.dependencyinjection.common;
+package com.dependencyinjection.dependencyinjection.common.coaches;
+
+import com.dependencyinjection.dependencyinjection.common.Coach;
 
 public class BaseballCoach implements Coach {
     @Override
