@@ -25,12 +25,16 @@ public class SqlCrudDemoApplication {
             for (Student student : students) {
                 System.out.println(student.toString());
             }
+            final var studentsByLastName = findUsersByLastname(studentDAO, "Gastelum");
+            for (Student student : studentsByLastName) {
+                System.out.println(student.toString());
+            }
         };
     }
 
     private void createStudent(StudentDAO studentDAO) {
         System.out.println("Creating new student");
-        Student tempStudent = new Student("Misael", "Gastelum", "xqwz@live.com");
+        Student tempStudent = new Student("Misael", "Miramontes", "xqwz@live.com");
         studentDAO.save(tempStudent);
         System.out.println("Saved student" + tempStudent.getId());
     }
@@ -43,4 +47,7 @@ public class SqlCrudDemoApplication {
         return studentDAO.findAll();
     }
 
+    public List<Student> findUsersByLastname(StudentDAO studentDAO, String lastName) {
+        return studentDAO.findByLastName(lastName);
+    }
 }

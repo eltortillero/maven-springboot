@@ -9,5 +9,7 @@ public interface StudentDAO {
 
     Student findById(int id);
 
+    List<Student> findByLastName(String lastName);
+
     List<Student> findAll();
 }
