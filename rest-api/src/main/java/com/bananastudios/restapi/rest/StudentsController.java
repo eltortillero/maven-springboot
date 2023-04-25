@@ -2,10 +2,6 @@ package com.bananastudios.restapi.rest;
 
 import com.bananastudios.restapi.domain.IStudents;
 import com.bananastudios.restapi.domain.entities.Student;
-import com.bananastudios.restapi.domain.entities.StudentErrorResponse;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,9 +46,4 @@ public class StudentsController implements IStudents {
         return null;
     }
 
-    @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exception) {
-        StudentErrorResponse error = new StudentErrorResponse(HttpStatus.NOT_FOUND.value(), exception.getMessage(), System.currentTimeMillis());
-        return new ResponseEntity<StudentErrorResponse>(error, HttpStatus.NOT_FOUND);
-    }
 }
